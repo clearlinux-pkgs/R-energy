@@ -4,24 +4,22 @@
 #
 Name     : R-energy
 Version  : 1.7.5
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/energy_1.7-5.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/energy_1.7-5.tar.gz
 Summary  : E-Statistics: Multivariate Inference via the Energy of Data
 Group    : Development/Tools
 License  : GPL-2.0+
-Requires: R-energy-lib
-Requires: R-Rcpp
+Requires: R-energy-lib = %{version}-%{release}
 BuildRequires : R-Rcpp
 BuildRequires : buildreq-R
 
 %description
-including distance correlation, one-sample, two-sample, and multi-sample tests for
-             comparing multivariate distributions, are implemented. Measuring and testing
-             multivariate independence based on distance correlation, partial distance correlation,
-             multivariate goodness-of-fit tests, k-groups and hierarchical clustering based on energy 
-             distance, testing for multivariate normality, distance components (disco) for non-parametric 
-             analysis of structured data, and other energy statistics/methods are implemented.
+# energy
+energy package for R
+The energy package for R implements several methods in multivariate analysis
+and multivariate inference based on the energy distance, which characterizes
+equality of distributions.
 
 %package lib
 Summary: lib components for the R-energy package.
@@ -39,11 +37,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534096091
+export SOURCE_DATE_EPOCH=1552770213
 
 %install
+export SOURCE_DATE_EPOCH=1552770213
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1534096091
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -78,8 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library energy|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  energy || :
 
 
 %files
@@ -104,7 +101,6 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/energy/help/paths.rds
 /usr/lib64/R/library/energy/html/00Index.html
 /usr/lib64/R/library/energy/html/R.css
-/usr/lib64/R/library/energy/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
