@@ -4,7 +4,7 @@
 #
 Name     : R-energy
 Version  : 1.7.6
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/energy_1.7-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/energy_1.7-6.tar.gz
 Summary  : E-Statistics: Multivariate Inference via the Energy of Data
@@ -14,6 +14,7 @@ Requires: R-energy-lib = %{version}-%{release}
 Requires: R-Rcpp
 BuildRequires : R-Rcpp
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 # energy
@@ -38,10 +39,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562519275
+export SOURCE_DATE_EPOCH=1571823988
 
 %install
-export SOURCE_DATE_EPOCH=1562519275
+export SOURCE_DATE_EPOCH=1571823988
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
