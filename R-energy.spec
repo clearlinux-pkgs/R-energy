@@ -4,7 +4,7 @@
 #
 Name     : R-energy
 Version  : 1.7.7
-Release  : 30
+Release  : 31
 URL      : https://cran.r-project.org/src/contrib/energy_1.7-7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/energy_1.7-7.tar.gz
 Summary  : E-Statistics: Multivariate Inference via the Energy of Data
@@ -16,11 +16,12 @@ BuildRequires : R-Rcpp
 BuildRequires : buildreq-R
 
 %description
-# energy
-energy package for R
-The energy package for R implements several methods in multivariate analysis
-and multivariate inference based on the energy distance, which characterizes
-equality of distributions.
+including distance correlation, one-sample, two-sample, and multi-sample tests for
+             comparing multivariate distributions, are implemented. Measuring and testing
+             multivariate independence based on distance correlation, partial distance correlation,
+             multivariate goodness-of-fit tests, k-groups and hierarchical clustering based on energy 
+             distance, testing for multivariate normality, distance components (disco) for non-parametric 
+             analysis of structured data, and other energy statistics/methods are implemented.
 
 %package lib
 Summary: lib components for the R-energy package.
@@ -32,21 +33,22 @@ lib components for the R-energy package.
 
 %prep
 %setup -q -c -n energy
+cd %{_builddir}/energy
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575905761
+export SOURCE_DATE_EPOCH=1589531940
 
 %install
-export SOURCE_DATE_EPOCH=1575905761
+export SOURCE_DATE_EPOCH=1589531940
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
