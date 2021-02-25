@@ -4,7 +4,7 @@
 #
 Name     : R-energy
 Version  : 1.7.8
-Release  : 34
+Release  : 35
 URL      : https://cran.r-project.org/src/contrib/energy_1.7-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/energy_1.7-8.tar.gz
 Summary  : E-Statistics: Multivariate Inference via the Energy of Data
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-energy-lib = %{version}-%{release}
 Requires: R-Rcpp
+Requires: R-gsl
 BuildRequires : R-Rcpp
 BuildRequires : R-gsl
 BuildRequires : buildreq-R
@@ -41,10 +42,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1614269006
+export SOURCE_DATE_EPOCH=1614273581
 
 %install
-export SOURCE_DATE_EPOCH=1614269006
+export SOURCE_DATE_EPOCH=1614273581
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
