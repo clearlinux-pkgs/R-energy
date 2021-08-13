@@ -4,7 +4,7 @@
 #
 Name     : R-energy
 Version  : 1.7.8
-Release  : 41
+Release  : 42
 URL      : https://cran.r-project.org/src/contrib/energy_1.7-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/energy_1.7-8.tar.gz
 Summary  : E-Statistics: Multivariate Inference via the Energy of Data
